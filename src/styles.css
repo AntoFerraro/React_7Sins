@@ -12,12 +12,14 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color:rgb(248, 214, 128);
+    background-color:black;
     height: 50px;
 }
 .header__div{
-    color: rgb(15, 68, 15);
-    letter-spacing: 3px;
+    color: whitesmoke;
+    text-shadow: 1px 1px red;
+    letter-spacing: 8px;
+    font-size:x-large;
 }
 .header__titulo{
     font-size: larger;    
@@ -33,5 +35,8 @@ body{
 .header__link{
     text-decoration: none;
     font-weight: 300;
-    color: black;
+    color: whitesmoke;
+}
+#icons{
+    color: white;
 }
