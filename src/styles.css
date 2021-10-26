@@ -40,3 +40,25 @@ body{
 #icons{
     color: white;
 }
+
+.div_contador{
+    margin-top: 20px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 15%;
+}
+.botonMas{
+    font-size: larger;
+}
+.botonMenos{
+    font-size: larger;
+}
+.contador{
+    font-size: larger;
+}
+.div_agregar{
+    width: 15%;
+    font-size: larger;
+    
+}
