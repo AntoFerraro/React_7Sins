@@ -1,0 +1,22 @@
+[
+    {
+        "id": "Mario",
+        "nombre": "Remera Super Mario Wars 3",
+        "precio": 1700,
+        "img": "/imagenes/mario.jpg"
+    },
+
+    {
+        "id": "Pokemon",
+        "nombre": "Remera Pokemon 95",
+        "precio": 1700,
+        "img": "/imagenes/pokemon.jpg"
+    },
+
+    {
+        "id": "Castlevania",
+        "nombre": "Remera Castlevania",
+        "precio": 1700,
+        "img": "/imagenes/castlevania.jpg"
+    }
+]

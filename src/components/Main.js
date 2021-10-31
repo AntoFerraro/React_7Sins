@@ -1,4 +1,5 @@
 import ItemCount from "./ItemCount"
+import ItemListContainer from "./ItemListContainer"
 
 const Main = () => {
    
@@ -7,6 +8,7 @@ const Main = () => {
         <main>
             <p>Nuestros Productos</p>
             <ItemCount stock={20} initial={1} />
+            <ItemListContainer/>
         </main>
     )
 }
