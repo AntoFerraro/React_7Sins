@@ -1,18 +1,19 @@
-const ItemDetail = ({productosDetail}) => {
-    
-    const filtrado = productosDetail.filter(prod => prod.categorias === 'vestidos');
-    
+import ItemCount from "./ItemCount";
 
-   {filtrado.map((items) => {
+const ItemDetail = ({id, nombre, precio, img}) => {
+    
+    
+   
         return (
-            <div key={items.id} >
-                <h2 key={items.nombre}>{items.nombre}</h2>
-                <img src={items.img} alt={items.nombre}/>
-                <p key={items.precio}>{items.precio}</p>
+            <div key={`detalle${id}`} >
+                <h2 >{nombre}</h2>
+                <img src={img} alt={nombre} style={{ width: "50%" }}/>
+                <p >{precio}</p>
+                <ItemCount stock={20} initial={1}/> {/*Debo implementar en JSON el stock*/}
+                <button type="button"> Volver</button>
             </div>
-        )  
-        })
-    }
+        )        
+    
     
 }
 
