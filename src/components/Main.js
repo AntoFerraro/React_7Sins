@@ -1,6 +1,6 @@
 import ItemCount from "./ItemCount"
-import ItemListContainer from "./ItemListContainer"
-import ItemDetailContainer from "./ItemDetailContainer"
+import ItemListContainer from "./ItemList/ItemListContainer"
+import ItemDetailContainer from "./ItemDetail/ItemDetailContainer"
 
 const Main = () => {
    
