@@ -1,7 +1,6 @@
 import ItemCount from "../ItemCount";
 
-const ItemDetail = ({id, nombre, precio, img}) => {
-    
+const ItemDetail = ({id, nombre, precio, img}) => {    
     
    
         return (

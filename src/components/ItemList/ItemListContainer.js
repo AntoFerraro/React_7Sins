@@ -2,18 +2,23 @@ import { useEffect, useState } from "react";
 import {useParams} from 'react-router-dom'
 import ItemList from "./ItemList"
 
-const ItemListContainer = (greeting) => {
+const ItemListContainer = () => {
 
-    const {id} = useParams()         
-    const [productos, setProductos] = useState([]);    
+    const {id} = useParams()   
+      
+    const [productos, setProductos] = useState([]);
+    
 
     useEffect(() => {
         setTimeout(() => {
             if(id){
-                fetch(`https://617e9eb82ff7e600174bd884.mockapi.io/api/sevenProd/products/${id}`)
+                fetch(`https://617e9eb82ff7e600174bd884.mockapi.io/api/sevenProd/products`)
                     .then(response => response.json())
-                    .then(myJson => {
-                        setProductos(myJson); 
+                    .then(products => 
+                        products.filter(item => item.categoria === id)
+                    )
+                    .then(myJson =>{
+                        setProductos(myJson)
                     }); 
             } else {
                 fetch("https://617e9eb82ff7e600174bd884.mockapi.io/api/sevenProd/products")
@@ -33,9 +38,8 @@ const ItemListContainer = (greeting) => {
         )
     } else{               
         return(
-            <div>
-                <p> Bienvenida {greeting.apellido} {greeting.nombre}</p>
-                <ItemList productos={productos}/>
+            <div >                
+                <ItemList  productos={productos}/>
             </div>
         )
     }
