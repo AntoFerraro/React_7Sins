@@ -7,7 +7,7 @@ const ItemDetailContainer = () => {
     const [productosDetail, setProductosDetail] = useState([]);   
     const [carga, setCarga] = useState(true);
     const {id} = useParams()    
-    const [theStock, setStock] = useState(0)
+    
   
         
     useEffect(() => {
@@ -23,12 +23,11 @@ const ItemDetailContainer = () => {
                         setProductosDetail(productoFiltrado);
                     }               
                     setCarga(false);
-                    setStock(productosDetail.stock)                                                         
+                                                                                                
                 });
                  
         }, 2000)
-    }, []);
-    
+    }, []);    
 
     if(carga){
        return(
@@ -39,9 +38,9 @@ const ItemDetailContainer = () => {
             return(
                 <div>
                     <h2> Soy Item Detail </h2>
-                      <ItemDetail key={productosDetail.id} nombre={productosDetail.nombre} precio={productosDetail.precio} img={productosDetail.img} stock={theStock}/>              
+                      <ItemDetail key={productosDetail.id} nombre={productosDetail.nombre} precio={productosDetail.precio} img={productosDetail.img} stock={productosDetail.stock}/>              
                     <div>
-                    <p> El stock disponible es: {theStock}</p>
+                    <p> El stock disponible es: {productosDetail.stock}</p>
                     </div>
                 </div>   
                            
