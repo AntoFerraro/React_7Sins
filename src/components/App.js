@@ -5,8 +5,10 @@ import Main from "./Main"
 import Header from "./Header"
 
 
-
 const App = () => {
+
+    
+
     return (
         <div>   
             <BrowserRouter>         
@@ -14,7 +16,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Main/>} />
                     <Route path="/categoria/:id" element={<ItemListContainer/>} />
-                    <Route path="/item/:id" element={<ItemDetailContainer/>} />
+                    <Route path="/item/:id" element={<ItemDetailContainer/>} />  
+                    <Route path="/cart"/>                  
                 </Routes>                
             </BrowserRouter>
         </div>

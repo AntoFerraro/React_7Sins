@@ -12,8 +12,7 @@ return (
             </div>
             <ul className="header__lista">                  
                 <li > <NavLink to="/categoria/remeras"className="header__link" > Remeras </NavLink> </li>
-                <li> <NavLink to="/categoria/vestidos" className="header__link" > Vestidos </NavLink> </li>  
-                <li> <NavLink to="/item/mario" className="header__link"> Item Mario</NavLink> </li> 
+                <li> <NavLink to="/categoria/vestidos" className="header__link" > Vestidos </NavLink> </li>                  
                 <CartWidget/>             
             </ul>
         </nav>
