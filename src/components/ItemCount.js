@@ -5,7 +5,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     const [contador, setContador] = useState(stock > 0 ? initial : 0)
     const [stockItem, setStockItem] = useState(stock > 0 ? stock - initial : 0)
-    const navigate = useNavigate();    
+    const navigate = useNavigate();    //Para navegar a otro link
     
     const aumentarContador = () => {        
         if(stockItem === 0){
@@ -25,12 +25,11 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
     }
 
+//Esto se lo pasamos a ItemDetail para que tenga el valor de nuestro contador
     const agregar = () => {
         navigate(`/cart`);
-        onAdd(contador)
-               
-    }
-        
+        onAdd(contador)               
+    }        
 
     return(
         <div>

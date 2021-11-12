@@ -1,17 +1,24 @@
 import ItemCount from "../ItemCount";
+import { useContext } from "react"
+import { contexto } from "../Context/CartContext"
 
-const ItemDetail = ({id, nombre, precio, img, stock}) => {    
-    
-    const onAdd = (contador) => {
-        console.log(contador, nombre);
+const ItemDetail = ({producto}) => {    
+
+    //Llamamos al contexto
+    const {addToCart} = useContext(contexto)
+
+    //Traido por ItemCount
+    const onAdd = (contador) => {        
+        addToCart(contador, producto)
     }
-   
+ 
+    //Card Individual
         return (
-            <div key={`detalle${id}`} >
-                <h2 >{nombre}</h2>
-                <img src={img} alt={nombre} style={{ width: "50%" }}/>
-                <p >{precio}</p>                
-                <ItemCount stock={stock} initial={1} onAdd={onAdd} /> 
+            <div key={`detalle${producto.id}`} >
+                <h2 >{producto.nombre}</h2>
+                <img src={producto.img} alt={producto.nombre} style={{ width: "50%" }}/>
+                <p >{producto.precio}</p>                
+                <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} /> 
                 <button type="button"> Volver</button>
             </div>
         )        

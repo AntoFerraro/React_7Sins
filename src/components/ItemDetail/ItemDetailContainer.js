@@ -38,7 +38,7 @@ const ItemDetailContainer = () => {
             return(
                 <div>
                     <h2> Soy Item Detail </h2>
-                      <ItemDetail key={productosDetail.id} nombre={productosDetail.nombre} precio={productosDetail.precio} img={productosDetail.img} stock={productosDetail.stock}/>              
+                      <ItemDetail key={productosDetail.id} producto={productosDetail}/>              
                     <div>
                     <p> El stock disponible es: {productosDetail.stock}</p>
                     </div>
