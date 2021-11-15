@@ -1,16 +1,23 @@
-import ItemCount from "../ItemCount";
+import ItemCount from "./ItemCount";
 import { useContext } from "react"
-import { contexto } from "../Context/CartContext"
+import { contexto } from "../../Context/CartContext"
+import { useNavigate } from "react-router";
 
 const ItemDetail = ({producto}) => {    
+
+    const navigate = useNavigate();
+    const volver = () => {
+        navigate(`/`)
+    }
+
 
     //Llamamos al contexto
     const {addToCart} = useContext(contexto)
 
     //Traido por ItemCount
     const onAdd = (contador) => {        
-        addToCart(contador, producto)
-    }
+        addToCart(producto, contador)
+    }    
  
     //Card Individual
         return (
@@ -19,7 +26,7 @@ const ItemDetail = ({producto}) => {
                 <img src={producto.img} alt={producto.nombre} style={{ width: "50%" }}/>
                 <p >{producto.precio}</p>                
                 <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} /> 
-                <button type="button"> Volver</button>
+                <button onClick={() => volver()}> Volver</button>
             </div>
         )        
     

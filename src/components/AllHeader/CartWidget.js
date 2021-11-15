@@ -1,14 +1,20 @@
-import { useContext } from "react"
-import { contexto } from "../Context/CartContext"
+import { useContext } from "react";
+import { contexto } from "../Context/CartContext";
+import { useNavigate } from "react-router";
 
 const CartWidget = () => {
     
-    //conseguir cart.lenght
+    const {cart} = useContext(contexto);
+    const navigate = useNavigate();
     
+    const goToCart = () => {
+        navigate(`/cart`)
+    }
     
     return (
-        <div> 
-            <span className="material-icons" id="icons"> shopping_cart</span> 
+        <div className="div_widget"> 
+            <span className="material-icons" id="icons" onClick={() => goToCart()}> shopping_cart</span>
+            <p className="cart_lenght">{cart.length} </p> 
                        
         </div>
     )

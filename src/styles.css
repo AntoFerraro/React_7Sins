@@ -83,3 +83,30 @@ body{
         margin: 20px auto;
         height: 350px;
 }
+/*Cart Widget*/
+
+.div_widget{
+    display: flex;
+}
+
+.cart_lenght{
+    color: red;
+}
+
+/*Cart*/
+
+.div_cart{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px
+}
+
+
+
+/*Cart Item*/
+
+.div_cartItem{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
