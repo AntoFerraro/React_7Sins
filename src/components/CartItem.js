@@ -5,8 +5,8 @@ const CartItem = ({id, nombre, precio, img, cantidad}) => {
     
    const {removeFromCart} = useContext(contexto);
 
-    const remove = (id) => { 
-        removeFromCart(id)        
+    const remove = (id, precio, cantidad) => { 
+        removeFromCart(id, precio, cantidad);        
     }
 
     return (
@@ -14,9 +14,10 @@ const CartItem = ({id, nombre, precio, img, cantidad}) => {
            <img src={img} alt={nombre} style={{ width: "10%" }}/>
            <p>{nombre}</p>
            <p>{cantidad}</p>
-           <p>{precio}</p>
+           <p>${precio}</p>
+           <p>Subtotal: ${precio * cantidad}</p>
            <div>
-               <button onClick={() => remove(id)}>Remover</button>
+               <button onClick={() => remove(id, precio,cantidad)}>Remover</button>
            </div>
         </div>
     )

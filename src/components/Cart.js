@@ -4,7 +4,7 @@ import CartItem from "./CartItem"
 
 const Cart = () => {
 
-    const {emptyCart, cart} = useContext(contexto)
+    const {emptyCart, cart, total} = useContext(contexto)
     
     console.log(cart)
     
@@ -23,11 +23,13 @@ const Cart = () => {
                   img={producto.product.img} 
                   cantidad={producto.cantidad}
                   id={producto.product.id}
+                  subtotal={producto.product.precio * producto.cantidad}
                 />
               )}               
             </div>
             <div>
                 <button onClick={() => emptyCart()}>Vaciar </button>
+                <p>Total: $ ${total}</p>
             </div>
         </div>
     )
