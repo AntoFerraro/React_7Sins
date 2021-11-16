@@ -17,12 +17,12 @@ const Cart = () => {
             <div>
             {cart.map((producto) =>
                 <CartItem
-                  key={`cart-${producto.product.id}`}                  
+                  key={producto.product.id}                  
                   nombre={producto.product.nombre}
                   precio={producto.product.precio}
                   img={producto.product.img} 
                   cantidad={producto.cantidad}
-                  
+                  id={producto.product.id}
                 />
               )}               
             </div>

@@ -5,8 +5,8 @@ const CartItem = ({id, nombre, precio, img, cantidad}) => {
     
    const {removeFromCart} = useContext(contexto);
 
-    const remove = (id) => { //No funciona bien
-        removeFromCart(id)
+    const remove = (id) => { 
+        removeFromCart(id)        
     }
 
     return (
@@ -16,7 +16,7 @@ const CartItem = ({id, nombre, precio, img, cantidad}) => {
            <p>{cantidad}</p>
            <p>{precio}</p>
            <div>
-               <button onClick={() => remove()}>Remover</button>
+               <button onClick={() => remove(id)}>Remover</button>
            </div>
         </div>
     )

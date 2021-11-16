@@ -11,22 +11,17 @@ const CustomComponent = ({children}) => {
     //No puedo pushear sobre cart, por lo que creamos un nuevo array que agarra los elementos por separado del original
     //Se encuentra en ItemDetail
     const addToCart = (product, cantidad) => {
-        if (isInCart(product.id) === false) {
-            setCart( [...cart, {product, cantidad}])
-        }         
-    }
-
-    const isInCart = (id) => { //NO funciona
-        const cartFind = cart.find(item => item.id === id)
-        if(cartFind === id) {
-            return true
-        }else{
-            return false
+        const existe = cart.find((item) => item.product.id === product.id);        
+        if(existe) {
+             setCart(cart.map(item => item.product.id === product.id ? {...existe, cantidad: existe.cantidad += cantidad} : item));             
+        }else {    
+            setCart( [...cart, {product, cantidad}]);            
         }
     }
 
-    const removeFromCart = (id) => { //no funciona
-        const carritoFiltrado = cart.filter((item) => item.id !== id)
+  
+    const removeFromCart = (id) => { //Se encuentra en CartItem, OK
+        const carritoFiltrado = cart.filter((item) => item.product.id !== id)
         setCart(carritoFiltrado)
     }
 
@@ -41,7 +36,7 @@ const CustomComponent = ({children}) => {
         addToCart: addToCart,
         removeFromCart: removeFromCart,
         emptyCart: emptyCart,
-        isInCart: isInCart
+        
     }
 
     return (
