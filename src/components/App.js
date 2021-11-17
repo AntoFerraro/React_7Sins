@@ -4,7 +4,7 @@ import ItemDetailContainer from "./Main/ItemDetail/ItemDetailContainer"
 import Main from "./Main/Main"
 import Header from "./AllHeader/Header"
 import CustomComponent from "./Context/CartContext"
-import Cart from "./Cart"
+import Cart from "./Cart/Cart"
 
 
 const App = () => {

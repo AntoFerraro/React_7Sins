@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { contexto } from "./Context/CartContext"
+import { contexto } from "../Context/CartContext"
 import CartItem from "./CartItem"
 
 const Cart = () => {
@@ -7,6 +7,11 @@ const Cart = () => {
     const {emptyCart, cart, total} = useContext(contexto)
     
     console.log(cart)
+
+    const buy = () => {
+        alert(`Gracias por su compra, su total es de ${total}`);
+        emptyCart();
+    }
     
     return (
         <div>
@@ -15,6 +20,7 @@ const Cart = () => {
             </div>
           
             <div>
+                
             {cart.map((producto) =>
                 <CartItem
                   key={producto.product.id}                  
@@ -28,8 +34,10 @@ const Cart = () => {
               )}               
             </div>
             <div>
-                <button onClick={() => emptyCart()}>Vaciar </button>
-                <p>Total: $ ${total}</p>
+                <button onClick={() => emptyCart()} style={{ margin: "0 0 0 15px"}}>Vaciar </button>
+                <p style={{ margin: "0 0 0 15px"}}>Total: $ {total}</p>
+                <button onClick={() => buy()} style={{ margin: "0 0 0 15px"}}> Comprar </button>
+                
             </div>
         </div>
     )

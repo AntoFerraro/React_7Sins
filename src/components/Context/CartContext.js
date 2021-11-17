@@ -33,6 +33,7 @@ const CustomComponent = ({children}) => {
     //Se encuentra en Cart, Ok
     const emptyCart = () => { 
         setCart([]);
+        setTotal(0);
     }
      
 

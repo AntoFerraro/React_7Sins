@@ -10,8 +10,8 @@ const Item = ({id, nombre, precio, img}) => {
 
     return (
         <div className="main_Cards" key={id} >
-            <h2 key={nombre}>{nombre}</h2>
-            <img src={img} alt={nombre} style={{ width: "30%" }}/>
+            <h2 className="item_h2" key={nombre}>{nombre}</h2>
+            <img className="item_img" src={img} alt={nombre} />
             <p key={precio}>{precio}</p>            
             <button onClick={() => goItemDetail(id)}> Ver detalles</button>
         </div>

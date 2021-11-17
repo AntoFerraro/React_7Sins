@@ -5,6 +5,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     const [contador, setContador] = useState(stock > 0 ? initial : 0)
     const [stockItem, setStockItem] = useState(stock > 0 ? stock - initial : 0)
+    const [mostrar, setMostrar] = useState(false)
     const navigate = useNavigate();    //Para navegar a otro link
     
     const aumentarContador = () => {        
@@ -26,10 +27,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
 //Esto se lo pasamos a ItemDetail para que tenga el valor de nuestro contador
-    const agregar = () => {
-        navigate(`/cart`);
-        onAdd(contador)               
+    const agregar = () => {        
+        onAdd(contador) 
+        setMostrar(!mostrar)             
     }        
+
+    //Aparece si hay algo agregado al cart
+    const redireccionar = () => {
+        navigate(`/cart`);
+    }
 
     return(
         <div>
@@ -39,7 +45,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <button className="botonMenos" onClick={disminuirContador}> - </button>                
             </div>
             <div className="div_agregar">
-            <button className="Agregar" onClick={() => agregar()} > Agregar al carrito </button>
+            <button id="add" className="Agregar" onClick={() => agregar()} > Agregar al carrito </button> 
+            { mostrar && <button onClick={redireccionar}>ver carrito</button> }     
             </div>
 
         </div>

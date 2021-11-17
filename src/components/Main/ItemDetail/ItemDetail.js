@@ -25,7 +25,7 @@ const ItemDetail = ({producto}) => {
                 <h2 >{producto.nombre}</h2>
                 <img src={producto.img} alt={producto.nombre} style={{ width: "50%" }}/>
                 <p >{producto.precio}</p>                
-                <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} /> 
+                <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />                            
                 <button onClick={() => volver()}> Volver</button>
             </div>
         )        
