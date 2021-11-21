@@ -12,7 +12,7 @@ const CustomComponent = ({children}) => {
     //No puedo pushear sobre cart, por lo que creamos un nuevo array que agarra los elementos por separado del original
     //Se encuentra en ItemDetail
     const addToCart = (product, cantidad) => {
-        const existe = cart.find((item) => item.product.id === product.id);        
+        const existe = cart.find((item) => item.product.id === product.id);              
         if(existe) {
              setCart(cart.map(item => item.product.id === product.id ? {...existe, cantidad: existe.cantidad += cantidad} : item)); 
              setTotal(total + ( existe.product.precio *existe.cantidad))
