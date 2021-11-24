@@ -9,12 +9,11 @@ const ItemDetailContainer = () => {
     const [carga, setCarga] = useState(true);
     const {id} = useParams()    
     
-  
         
     useEffect(() => {
-        if(!id){
-            const dataBase = firestore
-            const collection = dataBase.collection("products")
+        const dataBase = firestore
+        const collection = dataBase.collection("products")
+        if(!id){            
             const query = collection.doc("Mario")
             const promesa = query.get()
 
@@ -29,9 +28,6 @@ const ItemDetailContainer = () => {
                     console.log(err)
                 })
         } else{
-
-            const dataBase = firestore
-            const collection = dataBase.collection("products")
             const query = collection.doc(id)
             const promesa = query.get()
 

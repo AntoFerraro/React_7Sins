@@ -1,18 +1,44 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { contexto } from "../Context/CartContext"
 import CartItem from "./CartItem"
+import {firestore} from "../firebase"
+
 
 const Cart = () => {
 
     const {emptyCart, cart, total} = useContext(contexto)
-    
+    const [idOrden, setIdOrden] = useState()
     console.log(cart)
 
-    const buy = () => {
-        alert(`Gracias por su compra, su total es de ${total}`);
-        emptyCart();
+    const buy = async () => {
+        const usuario = {
+            nombre: "Francisco",
+            email: "fran@test.com",
+            telefono: "123555555"
+        }
+
+        const orden = {
+            buyer: usuario,
+            items : cart,
+            total : total,
+            //date : firebase.firestore.TimeStamp.now()
+        }
+
+        const db = firestore
+        const collection = db.collection("ordenes")
+        const query = await collection.add(orden)
+        setIdOrden(query.id)
+        alert(`Gracias por su compra, su numero de orden es: ${query.id}, su total es de ${total}`);
+
+        // query.
+        // then((resultado) => {
+        //     setIdOrden(resultado.id)
+        // })
+        emptyCart()
+        
     }
-    
+
+        
     return (
         <div>
             <div className="div_cart">
