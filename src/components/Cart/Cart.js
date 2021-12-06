@@ -4,13 +4,15 @@ import CartItem from "./CartItem"
 import {firestore} from "../firebase"
 
 
+
 const Cart = () => {
 
-    const {emptyCart, cart, total} = useContext(contexto)
+    const {emptyCart, cart, total} = useContext(contexto)    
     const [idOrden, setIdOrden] = useState()
+    
     console.log(cart)
 
-    const buy = async () => {
+    const buy = async () => { //hacer que se redirecciones a otra pagina, y mirar video
         const usuario = {
             nombre: "Francisco",
             email: "fran@test.com",
@@ -34,39 +36,42 @@ const Cart = () => {
         // then((resultado) => {
         //     setIdOrden(resultado.id)
         // })
-        emptyCart()
-        
+        emptyCart()        
     }
 
-        
-    return (
-        <div>
-            <div className="div_cart">
-                <h1>Cart</h1>
-            </div>
-          
+
+    if(cart.length >= 1) {    
+        return (
             <div>
                 
-            {cart.map((producto) =>
-                <CartItem
-                  key={producto.product.id}                  
-                  nombre={producto.product.nombre}
-                  precio={producto.product.precio}
-                  img={producto.product.img} 
-                  cantidad={producto.cantidad}
-                  id={producto.product.id}
-                  subtotal={producto.product.precio * producto.cantidad}
-                />
-              )}               
-            </div>
-            <div>
-                <button onClick={() => emptyCart()} style={{ margin: "0 0 0 15px"}}>Vaciar </button>
-                <p style={{ margin: "0 0 0 15px"}}>Total: $ {total}</p>
-                <button onClick={() => buy()} style={{ margin: "0 0 0 15px"}}> Comprar </button>
+                <div className="div_cart">
+                    <h1>Cart</h1>
+                </div>
+            
+                <div>
+                    
+                {cart.map((producto) =>
+                    <CartItem
+                    key={producto.product.id}                  
+                    nombre={producto.product.nombre}
+                    precio={producto.product.precio}
+                    img={producto.product.img} 
+                    cantidad={producto.cantidad}
+                    id={producto.product.id}
+                    subtotal={producto.product.precio * producto.cantidad}
+                    />
+                )}               
+                </div>
+                <div>
                 
+                    <button onClick={() => emptyCart()} style={{ margin: "0 0 0 15px"}}>Vaciar </button>
+                    <p style={{ margin: "0 0 0 15px"}}>Total: $ {total}</p>
+                    <button onClick={() => buy()} style={{ margin: "0 0 0 15px"}}> Comprar </button>
+                
+                </div>
             </div>
-        </div>
-    )
+        )
+    } 
 }
 
 export default Cart

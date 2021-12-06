@@ -8,7 +8,11 @@ const CartWidget = () => {
     const navigate = useNavigate();
     
     const goToCart = () => {
-        navigate(`/cart`)
+        if(cart.length >= 1) {
+            navigate(`/cart`)
+        }else{
+            navigate(`/cartEmpty`)
+        }
     }
     
     return (

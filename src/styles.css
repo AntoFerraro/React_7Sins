@@ -122,3 +122,14 @@ body{
     justify-content: space-around;
     align-items: center;
 }
+
+/*Cart Empty*/
+
+.div_imagen{
+    text-align: center;
+}
+
+.imagenVacio{
+    width: 50%;
+    margin-top: 20px;    
+}
