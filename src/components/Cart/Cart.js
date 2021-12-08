@@ -2,17 +2,24 @@ import { useContext, useState } from "react"
 import { contexto } from "../Context/CartContext"
 import CartItem from "./CartItem"
 import {firestore} from "../firebase"
-
+import { useNavigate } from "react-router";
+import chango from "../../img/shoppingCart.jpg"
 
 
 const Cart = () => {
 
     const {emptyCart, cart, total} = useContext(contexto)    
     const [idOrden, setIdOrden] = useState()
-    
-    console.log(cart)
+    const navigate = useNavigate();
 
-    const buy = async () => { //hacer que se redirecciones a otra pagina, y mirar video
+    
+    const compraTerminar = () => {
+        emptyCart()
+        navigate(`/`)
+       
+    }
+
+    const buy = async () => { 
         const usuario = {
             nombre: "Francisco",
             email: "fran@test.com",
@@ -30,24 +37,16 @@ const Cart = () => {
         const collection = db.collection("ordenes")
         const query = await collection.add(orden)
         setIdOrden(query.id)
-        alert(`Gracias por su compra, su numero de orden es: ${query.id}, su total es de ${total}`);
-
-        // query.
-        // then((resultado) => {
-        //     setIdOrden(resultado.id)
-        // })
-        emptyCart()        
+        
     }
 
 
-    if(cart.length >= 1) {    
+    if(cart.length >= 1 && !idOrden) {    
         return (
-            <div>
-                
+            <div>                
                 <div className="div_cart">
                     <h1>Cart</h1>
-                </div>
-            
+                </div>            
                 <div>
                     
                 {cart.map((producto) =>
@@ -71,7 +70,25 @@ const Cart = () => {
                 </div>
             </div>
         )
-    } 
+    } else if (idOrden) {
+        return( 
+            <div>
+                <div className="div_changoCompra">
+                    <img className="img_chango" src={chango} alt={"changoCompra"} />
+                </div>
+                <div>
+                    <p>Muchas gracias por su compra</p>
+                    <p>Su Total es de ${total}</p>
+                    <p>Su numero de Orden es: #<strong>{idOrden}</strong> </p>
+                    <button onClick={() => compraTerminar()}> Terminar la Compra</button>
+                </div>
+            </div>
+
+            
+        )
+    } else{
+        emptyCart()
+    }
 }
 
 export default Cart

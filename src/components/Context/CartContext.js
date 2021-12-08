@@ -1,4 +1,5 @@
 import {createContext , useState} from "react"
+import { useNavigate } from "react-router";
 export const contexto = createContext()
 export const {Provider} = contexto
 
@@ -8,6 +9,7 @@ const CustomComponent = ({children}) => {
     
     const [cart, setCart] = useState([])
     const [total, setTotal] = useState(0) //Guarda valor de todos los subtotales
+    const navigate = useNavigate();
 
     //No puedo pushear sobre cart, por lo que creamos un nuevo array que agarra los elementos por separado del original
     //Se encuentra en ItemDetail
@@ -34,6 +36,7 @@ const CustomComponent = ({children}) => {
     const emptyCart = () => { 
         setCart([]);
         setTotal(0);
+        navigate(`/cartEmpty`);
     }
      
 

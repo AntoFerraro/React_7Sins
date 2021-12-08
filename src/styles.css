@@ -113,6 +113,18 @@ body{
     margin-bottom: 15px
 }
 
+.div_changoCompra{
+    width: 100%;
+    background-color:rgb(94, 36, 86);
+    text-align: center;
+    height: 320px;
+    margin-bottom: 15px;
+}
+
+.img_chango{
+    height:80%;
+}
+
 
 
 /*Cart Item*/
@@ -133,3 +145,4 @@ body{
     width: 50%;
     margin-top: 20px;    
 }
+

@@ -42,22 +42,7 @@ const ItemDetailContainer = () => {
                     console.log(err)
                 })
             }
-       /*  setTimeout(() => {
-            fetch("https://617e9eb82ff7e600174bd884.mockapi.io/api/sevenProd/products")
-                .then(response => response.json())
-                .then(data => {
-                    if(!id) {
-                        const productoFiltrado = data.find(prod => prod.id === "Mario")
-                        setProductosDetail(productoFiltrado); 
-                    } else {
-                        const productoFiltrado = data.find(prod => prod.id === id)
-                        setProductosDetail(productoFiltrado);
-                    }               
-                    setCarga(false);
-                                                                                                
-                });
-                 
-        }, 2000) */
+     
     }, [id]);    
 
     if(carga){
