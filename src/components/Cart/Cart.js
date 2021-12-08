@@ -30,14 +30,14 @@ const Cart = () => {
             buyer: usuario,
             items : cart,
             total : total,
-            //date : firebase.firestore.TimeStamp.now()
+            //date: firebase.firestore.Timestamp.fromDate(new Date())
         }
 
         const db = firestore
         const collection = db.collection("ordenes")
         const query = await collection.add(orden)
         setIdOrden(query.id)
-        
+        console.log(cart)
     }
 
 
@@ -78,6 +78,7 @@ const Cart = () => {
                 </div>
                 <div>
                     <p>Muchas gracias por su compra</p>
+                  
                     <p>Su Total es de ${total}</p>
                     <p>Su numero de Orden es: #<strong>{idOrden}</strong> </p>
                     <button onClick={() => compraTerminar()}> Terminar la Compra</button>
