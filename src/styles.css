@@ -246,6 +246,27 @@ body{
 
 .total{
     font-size: larger;
+    margin: "0 0 0 15px";
+    font-weight: 800;
+    text-shadow: 1px 1px red;
+}
+
+.div_compraHecha{
+    text-align: center;
+    height: 200px;
+}
+
+.terminar_compra{
+    width: 90px;
+    height: 50px;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+.div_cartbuttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
 }
 
 /*Cart Item*/
@@ -255,6 +276,8 @@ body{
     justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
+    background-color: #4b00825e;
+    border-radius: 20px;
 }
 
 .cart_nombre{

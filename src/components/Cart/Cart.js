@@ -15,8 +15,7 @@ const Cart = () => {
     
     const compraTerminar = () => {
         emptyCart()
-        navigate(`/`)
-       
+        navigate(`/`)       
     }
 
     const buy =  () => { 
@@ -42,9 +41,7 @@ const Cart = () => {
         })
         .catch((error) => {
             console.log(error)
-        })
-        
-        
+        })       
     }
 
     
@@ -68,12 +65,10 @@ const Cart = () => {
                     />
                 )}               
                 </div>
-                <div>
-                
+                <div className="div_cartbuttons">                
                     <button className="cart_vaciar" onClick={() => emptyCart()} style={{ margin: "0 0 0 15px"}}>Vaciar </button>
-                    <p className="total" style={{ margin: "0 0 0 15px"}}>Total: $ {total}</p>
-                    <button className="cart_comprar" onClick={() => buy()} style={{ margin: "0 0 0 15px"}}> Comprar </button>
-                
+                    <p className="total">Total: $ {total}</p>
+                    <button className="cart_comprar" onClick={() => buy()} style={{ margin: "0 0 0 15px"}}> Comprar </button>                
                 </div>
             </div>
         )
@@ -83,12 +78,11 @@ const Cart = () => {
                 <div className="div_changoCompra">
                     <img className="img_chango" src={chango} alt={"changoCompra"} />
                 </div>
-                <div>
-                    <p>Muchas gracias por su compra</p>
-                  
-                    <p>Su Total es de ${total}</p>
+                <div className="div_compraHecha">
+                    <p>Muchas gracias por su compra</p>                  
+                    <p>Su Total es de <strong> ${total} </strong></p>
                     <p>Su numero de Orden es: #<strong>{idOrden}</strong> </p>
-                    <button onClick={() => compraTerminar()}> Terminar la Compra</button>
+                    <button className="terminar_compra" onClick={() => compraTerminar()}> Terminar la Compra</button>
                 </div>
             </div>
 

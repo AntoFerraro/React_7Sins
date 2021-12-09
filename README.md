@@ -8,6 +8,11 @@ Decidí hacer la pagina para la marca de ropa de una amiga quien trabaja en even
 ## Este proyecto fue creado utilizando Create React App
 link [Create React App](https://github.com/facebook/create-react-app).
 
+## Como comprar 
+
+![Alt Text](./src/video/Animation.gif)
+
+
 
 ### Como armar el entorno 
 Para instalar Node.js hay que descargar el instalador de la pagina oficial https://nodejs.org/es/
