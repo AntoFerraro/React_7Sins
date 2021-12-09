@@ -47,16 +47,15 @@ const ItemDetailContainer = () => {
 
     if(carga){
        return(
-       <div>
-           <p>Cargando Productos</p>
+       <div className="div_cargando">
+           <p className="cargando">Cargando Productos</p>
        </div> )             
     } else {      
             return(
-                <div>
-                    <h2> Soy Item Detail </h2>
+                <div>                    
                       <ItemDetail key={productosDetail.id} producto={productosDetail}/>              
-                    <div>
-                    <p> El stock disponible es: {productosDetail.stock}</p>
+                    <div className="div_stock">
+                        <p className="stock"> El stock disponible es: {productosDetail.stock}</p>
                     </div>
                 </div>   
                            

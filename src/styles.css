@@ -40,12 +40,29 @@ body{
     color: whitesmoke;
 }
 
+/*Main*/
+
+.nuestros_prod{
+    text-align: center;
+    color: darkorchid;
+    margin-top: 20px;
+    font-size: xx-large;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    font-style: italic;
+}
+
 /*CartWidget*/
 #icons{
     color: white;
 }
 
 /*ItemCount*/
+
+.div_itemCount{
+    display: flex;
+    justify-content: space-around;
+}
 
 .div_contador{
     margin-top: 20px;
@@ -56,16 +73,32 @@ body{
 }
 .botonMas{
     font-size: larger;
+    height: 40px;
 }
 .botonMenos{
     font-size: larger;
+    height: 40px;
 }
 .contador{
     font-size: larger;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 .div_agregar{
     width: 15%;
     font-size: larger;      
+}
+
+.Agregar{
+    width: 80px;
+    height: 50px;
+    font-size: medium;
+}
+
+.ver_Carrito{
+    width: 80px;
+    height: 30px;
+    font-size: medium;
 }
 
 /*Item*/
@@ -73,8 +106,7 @@ body{
 .div_Item{
     display:flex;
     margin: 20px;
-    flex-wrap: wrap;
-    
+    flex-wrap: wrap;    
 }
 
 .main_Cards{
@@ -83,17 +115,92 @@ body{
     margin: 20px auto;
     height: 450px;
     text-align: center;
-       
+    background-color: #00000038;  
 }
 
 .item_h2{
-    color: rgba(207, 22, 22, 0.753)
+    color: rgba(207, 22, 22, 0.753);
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-size: xx-large;
 }
 
 .item_img{
-    width: 50%;
-    margin: 30px 0 20px 0;
+    width: 45%;
+    margin: 10px 0 10px 0;
 }
+
+.item_precio{
+    margin-bottom: 5px;
+    font-size: x-large;
+    font-weight: 800;
+    text-shadow: 1px 1px red;
+}
+
+.item_detalles{
+    width: 80px;
+    font-size: larger;
+}
+
+/*Item List Container*/
+
+.div_cargando{
+    text-align: center;
+    background-color:rgba(128, 128, 128, 0.363);
+    letter-spacing:15px;
+
+}
+
+.cargando{
+    margin-top: 40px;
+    color:rgb(94, 36, 86);
+    font-size: xx-large;
+    text-shadow: 1px 1px rgba(190, 2, 2, 0.705);
+}
+
+/*Item Detail*/
+
+.div_detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: grey;
+}
+
+.detail_titulo{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: currentcolor;
+    text-shadow: 1px 1px mintcream;
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+
+
+.detail_precio{
+    margin-top: 20px;
+    font-size: x-large;
+    font-weight: 800;
+}
+
+.detail_volver{
+    width: 80px;
+    height: 30px;
+    font-size: medium;
+}
+
+/*Item Detail Container*/
+
+.div_stock{
+    text-align: center;
+    background-color: grey;
+}
+
+.stock{
+    color:rgba(190, 2, 2, 0.705);
+    font-size: larger;
+}
+
 
 /*Cart Widget*/
 
@@ -125,7 +232,21 @@ body{
     height:80%;
 }
 
+.cart_vaciar{
+    width: 80px;
+    height: 30px;
+    font-size: medium;
+}
 
+.cart_comprar{
+    width: 80px;
+    height: 30px;
+    font-size: medium;
+}
+
+.total{
+    font-size: larger;
+}
 
 /*Cart Item*/
 
@@ -133,6 +254,12 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 20px;
+}
+
+.cart_nombre{
+    width: 10%;
+    text-align: center;
 }
 
 /*Cart Empty*/

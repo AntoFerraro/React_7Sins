@@ -12,7 +12,7 @@ const CartItem = ({id, nombre, precio, img, cantidad}) => {
     return (
         <div key={id} className="div_cartItem">
            <img src={img} alt={nombre} style={{ width: "10%" }}/>
-           <p>{nombre}</p>
+           <p className="cart_nombre">{nombre}</p>
            <p>{cantidad}</p>
            <p>${precio}</p>
            <p>Subtotal: ${precio * cantidad}</p>

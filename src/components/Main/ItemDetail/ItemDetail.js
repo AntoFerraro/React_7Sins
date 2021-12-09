@@ -21,12 +21,12 @@ const ItemDetail = ({producto}) => {
  
     //Card Individual
         return (
-            <div key={`detalle${producto.id}`} >
-                <h2 >{producto.nombre}</h2>
-                <img src={producto.img} alt={producto.nombre} style={{ width: "50%" }}/>
-                <p >{producto.precio}</p>                
+            <div className="div_detail" key={`detalle${producto.id}`} >
+                <h2 className="detail_titulo" >{producto.nombre}</h2>
+                <img className="detail_img" src={producto.img} alt={producto.nombre} style={{ width: "50%" }}/>
+                <p className="detail_precio" >${producto.precio}</p>                
                 <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />                            
-                <button onClick={() => volver()}> Volver</button>
+                <button className="detail_volver" onClick={() => volver()}> Volver</button>
             </div>
         )        
     

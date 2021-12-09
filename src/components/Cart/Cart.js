@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { contexto } from "../Context/CartContext"
 import CartItem from "./CartItem"
-import {firestore} from "../firebase"
+import {firestore, formatDate} from "../firebase"
 import { useNavigate } from "react-router";
 import chango from "../../img/shoppingCart.jpg"
 
@@ -19,7 +19,7 @@ const Cart = () => {
        
     }
 
-    const buy = async () => { 
+    const buy =  () => { 
         const usuario = {
             nombre: "Francisco",
             email: "fran@test.com",
@@ -30,17 +30,24 @@ const Cart = () => {
             buyer: usuario,
             items : cart,
             total : total,
-            //date: firebase.firestore.Timestamp.fromDate(new Date())
+            date: formatDate(new Date()),
         }
 
         const db = firestore
         const collection = db.collection("ordenes")
-        const query = await collection.add(orden)
-        setIdOrden(query.id)
-        console.log(cart)
+        const query =  collection.add(orden)
+        query.
+        then((resultado) => {
+            setIdOrden(resultado.id)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+        
+        
     }
 
-
+    
     if(cart.length >= 1 && !idOrden) {    
         return (
             <div>                
@@ -63,9 +70,9 @@ const Cart = () => {
                 </div>
                 <div>
                 
-                    <button onClick={() => emptyCart()} style={{ margin: "0 0 0 15px"}}>Vaciar </button>
-                    <p style={{ margin: "0 0 0 15px"}}>Total: $ {total}</p>
-                    <button onClick={() => buy()} style={{ margin: "0 0 0 15px"}}> Comprar </button>
+                    <button className="cart_vaciar" onClick={() => emptyCart()} style={{ margin: "0 0 0 15px"}}>Vaciar </button>
+                    <p className="total" style={{ margin: "0 0 0 15px"}}>Total: $ {total}</p>
+                    <button className="cart_comprar" onClick={() => buy()} style={{ margin: "0 0 0 15px"}}> Comprar </button>
                 
                 </div>
             </div>

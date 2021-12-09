@@ -54,8 +54,8 @@ const ItemListContainer = () => {
 
     if(productos.length === 0){
         return(
-            <div>
-                <p>Cargando Productos</p>
+            <div className="div_cargando">
+                <p className="cargando">Cargando Productos</p>
             </div> 
         )
     } else{               
