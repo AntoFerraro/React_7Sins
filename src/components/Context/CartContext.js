@@ -28,7 +28,9 @@ const CustomComponent = ({children}) => {
         const carritoFiltrado = cart.filter((item) => item.product.id !== id)        
         setCart(carritoFiltrado)
         setTotal(total - (precio * cantidad))
-        navigate(`/cartEmpty`);
+        if(carritoFiltrado.length === 0) {
+            navigate(`/cartEmpty`);
+        }
     }
 
     
