@@ -42,14 +42,36 @@ body{
 
 /*Main*/
 
+.background{
+    background-image:url("img/ladrillos.png");
+    background-attachment: fixed;    
+}
+
 .nuestros_prod{
     text-align: center;
-    color: darkorchid;
-    margin-top: 20px;
-    font-size: xx-large;
-    letter-spacing: 2px;
-    text-decoration: underline;
+    color: #ad09ff;    
+    font-size: xxx-large;
+    letter-spacing: 3px;    
     font-style: italic;
+    position: relative;
+    bottom: 25px;
+    text-shadow:/* white glow*/
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    /* purple glow */
+    0 0 42px #ad09ff,
+    0 0 82px #ad09ff,
+    0 0 92px #ad09ff,
+    0 0 102px #ad09ff,
+    0 0 151px #ad09ff;
+}
+
+/*welcomeSign*/
+
+.welcomeSign{
+    width: -webkit-fill-available;
+    height: 1000px;
 }
 
 /*CartWidget*/
