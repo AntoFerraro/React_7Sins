@@ -4,6 +4,7 @@
 
 Este es mi proyecto para [Coderhouse](https://www.coderhouse.com/) en el curso de React.
 Decidí hacer la pagina para la marca de ropa de una amiga quien trabaja en eventos vendiendo estos productos.
+Realice un CSS básico ya que no deseaba utilizar ningun tipo de plantilla, pero aún asi el mayor trabajo está hecho en React.
 
 ## Este proyecto fue creado utilizando Create React App
 link [Create React App](https://github.com/facebook/create-react-app).
