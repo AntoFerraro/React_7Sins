@@ -1,5 +1,5 @@
 import ItemListContainer from "./ItemList/ItemListContainer"
-import ItemDetailContainer from "./ItemDetail/ItemDetailContainer"
+
 import Welcome from "./WelcomePage/Welcome"
 
 const Main = () => {
@@ -8,8 +8,7 @@ const Main = () => {
         <main className="background">
             <Welcome/>
             <h2 className="nuestros_prod">Nuestros Productos</h2>            
-            <ItemListContainer/>
-            <ItemDetailContainer/>
+            <ItemListContainer/>            
         </main>
     )
 }

@@ -6,12 +6,12 @@ import NavBar from "./AllHeader/NavBar"
 import CustomComponent from "./Context/CartContext"
 import Cart from "./Cart/Cart"
 import CartEmpty from "./Cart/CartEmpty"
-
+import Footer from "./Footer/Footer"
 
 const App = () => {
 
     return (
-        <div>   
+        <div className="app__container">   
             <BrowserRouter>  
             <CustomComponent>       
                 <NavBar/>
@@ -22,6 +22,7 @@ const App = () => {
                     <Route path="/cart" element= {<Cart/>} />
                     <Route path="/cartEmpty" element={<CartEmpty/>} />                  
                 </Routes> 
+                <Footer/>
             </CustomComponent>               
             </BrowserRouter>
         </div>
