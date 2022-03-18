@@ -47,9 +47,9 @@ const Cart = () => {
     
     if(cart.length >= 1 && !idOrden) {    
         return (
-            <div>                
+            <div className="div_container">                
                 <div className="div_cart">
-                    <h1>Cart</h1>
+                    <h1 className="h1__cart">Cart</h1>
                 </div>            
                 <div>
                     
@@ -74,14 +74,14 @@ const Cart = () => {
         )
     } else if (idOrden) {
         return( 
-            <div>
+            <div className="finalizar_container">
                 <div className="div_changoCompra">
                     <img className="img_chango" src={chango} alt={"changoCompra"} />
                 </div>
                 <div className="div_compraHecha">
-                    <p>Muchas gracias por su compra</p>                  
-                    <p>Su Total es de <strong> ${total} </strong></p>
-                    <p>Su numero de Orden es: #<strong>{idOrden}</strong> </p>
+                    <p className="cart_compraHecha">Muchas gracias por su compra</p>                  
+                    <p className="cart_compraHecha">Su Total es de <strong> ${total} </strong></p>
+                    <p className="cart_compraHecha">Su numero de Orden es: #<strong>{idOrden}</strong> </p>
                     <button className="terminar_compra" onClick={() => compraTerminar()}> Terminar la Compra</button>
                 </div>
             </div>

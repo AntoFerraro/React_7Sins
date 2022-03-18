@@ -97,6 +97,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     width: 15%;
+    color: #02FEFF;
 }
 .botonMas{
     font-size: larger;
@@ -108,8 +109,8 @@ body{
 }
 .contador{
     font-size: larger;
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .div_agregar{
     width: 15%;
@@ -139,7 +140,7 @@ body{
 .main_Cards{    
     width: 40%;
     margin: 20px auto;
-    height: 450px;
+    height: 490px;
     text-align: center;
     border: 0.2rem solid #fff;
     border-radius: 2rem;
@@ -255,23 +256,45 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: grey;
+    background-image:url("img/ladrillos.png");
+    background-attachment: fixed;  
 }
 
 .detail_titulo{
     margin-top: 40px;
     margin-bottom: 20px;
-    color: currentcolor;
-    text-shadow: 1px 1px mintcream;
-    letter-spacing: 2px;
+    color: #EE06B6;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    
+    0 0 42px #EE06B6,
+    0 0 82px #EE06B6,
+    0 0 92px #EE06B6,
+    0 0 102px #EE06B6,
+    0 0 151px #EE06B6;   
     font-size: xx-large;
 }
 
 
 .detail_precio{
     margin-top: 20px;
+    margin-bottom:30px;
     font-size: x-large;
     font-weight: 800;
+    color: #FFFC15;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    
+    0 0 42px #FFFC15,
+    0 0 82px #FFFC15,
+    0 0 92px #FFFC15,
+    0 0 102px #FFFC15,
+    0 0 151px #FFFC15;
+    
 }
 
 .detail_volver{
@@ -284,12 +307,20 @@ body{
 
 .div_stock{
     text-align: center;
-    background-color: grey;
+    background-image:url("img/ladrillos.png");
+    background-attachment: fixed;  
 }
 
 .stock{
     color:rgba(190, 2, 2, 0.705);
     font-size: larger;
+}
+
+/*ItemListContainer*/
+
+.main_Cards{
+    background-image:url("img/ladrillos.png");
+    background-attachment: fixed;    
 }
 
 
@@ -305,10 +336,28 @@ body{
 
 /*Cart*/
 
+
 .div_cart{
     text-align: center;
     margin-top: 10px;
     margin-bottom: 15px
+}
+
+.h1__cart{
+    margin-top: 50px;
+    margin-bottom: 80px;
+    color: #EE06B6;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    
+    0 0 42px #EE06B6,
+    0 0 82px #EE06B6,
+    0 0 92px #EE06B6,
+    0 0 102px #EE06B6,
+    0 0 151px #EE06B6;   
+    font-size: xxx-large;
 }
 
 .div_changoCompra{
@@ -339,12 +388,28 @@ body{
     font-size: larger;
     margin: "0 0 0 15px";
     font-weight: 800;
-    text-shadow: 1px 1px red;
+    text-shadow:/* white glow*/
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    /* purple glow */
+    0 0 42px #ad09ff,
+    0 0 82px #ad09ff,
+    0 0 92px #ad09ff,
+    0 0 102px #ad09ff,
+    0 0 151px #ad09ff;
+    color: #ad09ff;
 }
 
 .div_compraHecha{
     text-align: center;
     height: 200px;
+}
+
+.cart_compraHecha{
+    font-weight: 800;
+    color: azure;
+    letter-spacing: 2px;
 }
 
 .terminar_compra{
@@ -357,7 +422,12 @@ body{
 .div_cartbuttons{
     display: flex;
     justify-content: space-around;
-    margin-top: 60px;
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+
+.finalizar_container{
+    height: 620px;
 }
 
 /*Cart Item*/
@@ -374,6 +444,27 @@ body{
 .cart_nombre{
     width: 10%;
     text-align: center;
+    font-weight: 800;
+    color: azure;
+    letter-spacing: 2px;
+}
+
+.cart_cantidad{
+    font-weight: 800;
+    color: azure;
+    letter-spacing: 2px;
+}
+
+.cart_precio{
+    font-weight: 800;
+    color: azure;
+    letter-spacing: 2px;
+}
+
+.cart_subtotal{
+    font-weight: 800;
+    color: azure;
+    letter-spacing: 2px;
 }
 
 /*Cart Empty*/
@@ -396,7 +487,7 @@ body{
 }
 
 .footer__descripcion{
-    width: 260px;
+    width: 290px;
     font-weight: 700;
     letter-spacing: 3px;
     color: rgb(247, 240, 245);
